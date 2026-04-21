@@ -1,0 +1,110 @@
+{
+  "task_id": "task_03",
+  "task": "Explain how data drift is detected in production ML systems and what happens when it is detected.",
+  "timestamp": "2026-04-21T02:14:36.299478",
+  "model": "mistral:7b-instruct",
+  "steps": [
+    {
+      "step": 1,
+      "tool": "retriever",
+      "tool_input": "Data drift in production ML systems",
+      "reasoning": "To gather factual information about how data drift is detected in production ML systems.",
+      "result_summary": "Retrieved 3 chunks. Top: 'Model Monitoring and Data Drift Detection' (sim=0.6401)",
+      "raw_result": {
+        "tool": "retriever",
+        "query": "Data drift in production ML systems",
+        "chunks": [
+          {
+            "rank": 1,
+            "doc_id": "doc_04",
+            "doc_title": "Model Monitoring and Data Drift Detection",
+            "content": "Model monitoring is the practice of continuously observing a deployed machine learning model behavior in production to detect degradation, data drift, and concept drift. Data drift occurs when the statistical distribution of input features in production diverges from the distribution seen during training. Common drift detection methods include the Kolmogorov-Smirnov test, Population Stability Index (PSI), and Jensen-Shannon divergence. Concept drift refers to changes in the relationship between input features and the target variable. For example, a fraud detection model may become less effective as fraudsters adapt their strategies over time. Performance monitoring tracks metrics like prediction latency, throughput, and model accuracy. Tools such as Evidently AI, Arize, and WhyLogs provide dashboards for real-time drift detection and alerting. When drift is detected, a retraining trigger is fired initiating an automated pipeline.",
+            "similarity": 0.6401
+          },
+          {
+            "rank": 2,
+            "doc_id": "doc_03",
+            "doc_title": "MLOps Pipelines and CI/CD for Machine Learning",
+            "content": "MLOps applies DevOps principles to machine learning systems, enabling reliable, repeatable, and automated ML workflows in production environments. A typical MLOps pipeline includes data ingestion, data validation, feature engineering, model training, model evaluation, model registration, and model serving. Tools like Apache Airflow, Kubeflow Pipelines, and Prefect are commonly used for orchestration. Continuous Integration for ML involves automatically running data validation checks, unit tests for preprocessing code, and training pipeline smoke tests on each code commit. Continuous Deployment automates the promotion of models from staging to production after passing defined quality gates such as accuracy thresholds or latency benchmarks. Model versioning is a critical MLOps practice. Tools like MLflow, DVC, and Weights and Biases track experiment parameters, metrics, and artifact versions, enabling reproducibility and rollback to previous model versions when production issues arise.",
+            "similarity": 0.4185
+          },
+          {
+            "rank": 3,
+            "doc_id": "doc_06",
+            "doc_title": "Feature Stores in Machine Learning",
+            "content": "A feature store is a centralized repository for storing, managing, and serving machine learning features. It bridges the gap between data engineering and model training and serving by providing consistent feature definitions across the ML lifecycle. Feature stores have two serving layers: the offline store used for batch training, and the online store used for real-time inference. The offline store is typically a data warehouse like BigQuery or Snowflake. The online store is typically a low-latency key-value store like Redis or DynamoDB. The most critical problem feature stores solve is training-serving skew, the discrepancy between features computed during training and features computed during serving. By using the same feature transformation logic in both contexts, feature stores eliminate this skew. Popular feature store implementations include Feast (open-source), Tecton, Hopsworks, and Vertex AI Feature Store. They support point-in-time correct feature retrieval.",
+            "similarity": 0.295
+          }
+        ],
+        "top_doc": "Model Monitoring and Data Drift Detection",
+        "top_similarity": 0.6401,
+        "latency_ms": 23.1
+      },
+      "retrieved_content": "Model monitoring is the practice of continuously observing a deployed machine learning model behavior in production to detect degradation, data drift, and concept drift. Data drift occurs when the statistical distribution of input features in production diverges from the distribution seen during training. Common drift detection methods include the Kolmogorov-Smirnov test, Population Stability Index (PSI), and Jensen-Shannon divergence. Concept drift refers to changes in the relationship between input features and the target variable. For example, a fraud detection model may become less effective as fraudsters adapt their strategies over time. Performance monitoring tracks metrics like prediction latency, throughput, and model accuracy. Tools such as Evidently AI, Arize, and WhyLogs provide dashboards for real-time drift detection and alerting. When drift is detected, a retraining trigger is fired initiating an automated pipeline. MLOps applies DevOps principles to machine learning systems, enabling reliable, repeatable, and automated ML workflows in production environments. A typical MLOps pipeline includes data ingestion, data validation, feature engineering, model training, model evaluation, model registration, and model serving. Tools like Apache Airflow, Kubeflow Pipelines, and Prefect are commonly used for orchestration. Continuous Integration for ML involves automatically running data validation checks, unit tests for preprocessing code, and training pipeline smoke tests on each code commit. Continuous Deployment automates the promotion of models from staging to production after passing defined quality gates such as accuracy thresholds or latency benchmarks. Model versioning is a critical MLOps practice. Tools like MLflow, DVC, and Weights and Biases track experiment parameters, metrics, and artifact versions, enabling reproducibility and rollback to previous model versions when production issues arise.",
+      "latency_ms": 23.1
+    },
+    {
+      "step": 2,
+      "tool": "summarizer",
+      "tool_input": "Model Monitoring and Data Drift Detection",
+      "reasoning": "The retrieved document is lengthy, so it needs to be distilled into a concise summary before further analysis.",
+      "result_summary": "Summary (91 words): Machine learning model monitoring involves continuously observing deployed model...",
+      "raw_result": {
+        "tool": "summarizer",
+        "input_length": 262,
+        "summary": "Machine learning model monitoring involves continuously observing deployed models in production to detect data and concept drift, using methods like the Kolmogorov-Smirnov test, Population Stability Index (PSI), and Jensen-Shannon divergence. Tools such as Evidently AI, Arize, and WhyLogs provide real-time drift detection and alerting. MLOps applies DevOps principles to machine learning systems, with a typical pipeline including data ingestion, model training, and serving, among other stages. Tools like Apache Airflow, Kubeflow Pipelines, and Prefect are used for orchestration, while continuous integration and deployment automate various stages of the ML workflow. Model",
+        "output_length": 91,
+        "latency_ms": 4501.8
+      },
+      "retrieved_content": "Machine learning model monitoring involves continuously observing deployed models in production to detect data and concept drift, using methods like the Kolmogorov-Smirnov test, Population Stability Index (PSI), and Jensen-Shannon divergence. Tools such as Evidently AI, Arize, and WhyLogs provide real-time drift detection and alerting. MLOps applies DevOps principles to machine learning systems, with a typical pipeline including data ingestion, model training, and serving, among other stages. Tools like Apache Airflow, Kubeflow Pipelines, and Prefect are used for orchestration, while continuous integration and deployment automate various stages of the ML workflow. Model",
+      "latency_ms": 4501.8
+    },
+    {
+      "step": 3,
+      "tool": "retriever",
+      "tool_input": "How is data drift detected in production ML systems?",
+      "reasoning": "The question asks for specific details about the detection of data drift, which requires factual information. The summarized text does not provide enough detail on this topic.",
+      "result_summary": "Retrieved 3 chunks. Top: 'Model Monitoring and Data Drift Detection' (sim=0.6764)",
+      "raw_result": {
+        "tool": "retriever",
+        "query": "How is data drift detected in production ML systems?",
+        "chunks": [
+          {
+            "rank": 1,
+            "doc_id": "doc_04",
+            "doc_title": "Model Monitoring and Data Drift Detection",
+            "content": "Model monitoring is the practice of continuously observing a deployed machine learning model behavior in production to detect degradation, data drift, and concept drift. Data drift occurs when the statistical distribution of input features in production diverges from the distribution seen during training. Common drift detection methods include the Kolmogorov-Smirnov test, Population Stability Index (PSI), and Jensen-Shannon divergence. Concept drift refers to changes in the relationship between input features and the target variable. For example, a fraud detection model may become less effective as fraudsters adapt their strategies over time. Performance monitoring tracks metrics like prediction latency, throughput, and model accuracy. Tools such as Evidently AI, Arize, and WhyLogs provide dashboards for real-time drift detection and alerting. When drift is detected, a retraining trigger is fired initiating an automated pipeline.",
+            "similarity": 0.6764
+          },
+          {
+            "rank": 2,
+            "doc_id": "doc_03",
+            "doc_title": "MLOps Pipelines and CI/CD for Machine Learning",
+            "content": "MLOps applies DevOps principles to machine learning systems, enabling reliable, repeatable, and automated ML workflows in production environments. A typical MLOps pipeline includes data ingestion, data validation, feature engineering, model training, model evaluation, model registration, and model serving. Tools like Apache Airflow, Kubeflow Pipelines, and Prefect are commonly used for orchestration. Continuous Integration for ML involves automatically running data validation checks, unit tests for preprocessing code, and training pipeline smoke tests on each code commit. Continuous Deployment automates the promotion of models from staging to production after passing defined quality gates such as accuracy thresholds or latency benchmarks. Model versioning is a critical MLOps practice. Tools like MLflow, DVC, and Weights and Biases track experiment parameters, metrics, and artifact versions, enabling reproducibility and rollback to previous model versions when production issues arise.",
+            "similarity": 0.4112
+          },
+          {
+            "rank": 3,
+            "doc_id": "doc_06",
+            "doc_title": "Feature Stores in Machine Learning",
+            "content": "A feature store is a centralized repository for storing, managing, and serving machine learning features. It bridges the gap between data engineering and model training and serving by providing consistent feature definitions across the ML lifecycle. Feature stores have two serving layers: the offline store used for batch training, and the online store used for real-time inference. The offline store is typically a data warehouse like BigQuery or Snowflake. The online store is typically a low-latency key-value store like Redis or DynamoDB. The most critical problem feature stores solve is training-serving skew, the discrepancy between features computed during training and features computed during serving. By using the same feature transformation logic in both contexts, feature stores eliminate this skew. Popular feature store implementations include Feast (open-source), Tecton, Hopsworks, and Vertex AI Feature Store. They support point-in-time correct feature retrieval.",
+            "similarity": 0.249
+          }
+        ],
+        "top_doc": "Model Monitoring and Data Drift Detection",
+        "top_similarity": 0.6764,
+        "latency_ms": 23.8
+      },
+      "retrieved_content": "Model monitoring is the practice of continuously observing a deployed machine learning model behavior in production to detect degradation, data drift, and concept drift. Data drift occurs when the statistical distribution of input features in production diverges from the distribution seen during training. Common drift detection methods include the Kolmogorov-Smirnov test, Population Stability Index (PSI), and Jensen-Shannon divergence. Concept drift refers to changes in the relationship between input features and the target variable. For example, a fraud detection model may become less effective as fraudsters adapt their strategies over time. Performance monitoring tracks metrics like prediction latency, throughput, and model accuracy. Tools such as Evidently AI, Arize, and WhyLogs provide dashboards for real-time drift detection and alerting. When drift is detected, a retraining trigger is fired initiating an automated pipeline. MLOps applies DevOps principles to machine learning systems, enabling reliable, repeatable, and automated ML workflows in production environments. A typical MLOps pipeline includes data ingestion, data validation, feature engineering, model training, model evaluation, model registration, and model serving. Tools like Apache Airflow, Kubeflow Pipelines, and Prefect are commonly used for orchestration. Continuous Integration for ML involves automatically running data validation checks, unit tests for preprocessing code, and training pipeline smoke tests on each code commit. Continuous Deployment automates the promotion of models from staging to production after passing defined quality gates such as accuracy thresholds or latency benchmarks. Model versioning is a critical MLOps practice. Tools like MLflow, DVC, and Weights and Biases track experiment parameters, metrics, and artifact versions, enabling reproducibility and rollback to previous model versions when production issues arise.",
+      "latency_ms": 23.8
+    }
+  ],
+  "final_answer": "In production Machine Learning (ML) systems, data drift is detected by continuously monitoring the statistical distribution of input features compared to the distribution seen during training. This process is known as model monitoring. Common methods for detecting data drift include the Kolmogorov-Smirnov test, Population Stability Index (PSI), and Jensen-Shannon divergence.\n\nWhen data drift is detected, it indicates that the input features in production have changed from what was used during training, potentially causing the model to degrade in performance. To address this issue, a retraining trigger is fired, initiating an automated pipeline that updates the model with new training data to better adapt to the changing distribution.\n\nTools such as Evidently AI, Arize, and WhyLogs provide dashboards for real-time drift detection and alerting in production ML systems. These tools help teams quickly identify and respond to data drift, ensuring their models remain effective over time.",
+  "total_latency_ms": 19142.5,
+  "tools_used": [
+    "retriever",
+    "summarizer"
+  ],
+  "final_answer_latency_ms": 6659.5,
+  "num_steps": 3
+}

@@ -1,0 +1,251 @@
+[
+  {
+    "query_id": "Q01",
+    "query": "What is retrieval-augmented generation and how does it reduce hallucinations?",
+    "type": "direct_factual",
+    "relevant_docs": [
+      "doc_01"
+    ],
+    "retrieved_doc_ids": [
+      "doc_01",
+      "doc_10",
+      "doc_07"
+    ],
+    "retrieved_titles": [
+      "Retrieval-Augmented Generation (RAG)",
+      "Evaluation Metrics for RAG and LLM Systems",
+      "Chunking Strategies for RAG Systems"
+    ],
+    "answer": "Retrieval-Augmented Generation (RAG) is a technique that enhances large language model outputs by grounding them in external knowledge retrieved at inference time. It reduces hallucinations by injecting the top-k most relevant chunks retrieved from a vector database into the LLM prompt as context, enabling the model to generate factually grounded responses.",
+    "precision_at_1": 1.0,
+    "precision_at_3": 0.3333333333333333,
+    "recall_at_3": 1.0,
+    "retrieval_ms": 98.9,
+    "generation_ms": 2024.8,
+    "end_to_end_ms": 2123.8
+  },
+  {
+    "query_id": "Q02",
+    "query": "What are the differences between FAISS and ChromaDB for vector search?",
+    "type": "direct_factual",
+    "relevant_docs": [
+      "doc_02"
+    ],
+    "retrieved_doc_ids": [
+      "doc_02",
+      "doc_01",
+      "doc_09"
+    ],
+    "retrieved_titles": [
+      "Vector Databases and Embedding Indexes",
+      "Retrieval-Augmented Generation (RAG)",
+      "Embedding Models for Semantic Search"
+    ],
+    "answer": "FAISS and ChromaDB are both open-source libraries for approximate nearest neighbor (ANN) search, but they have some differences. FAISS supports several index types including Flat, IVF, and HNSW, while ChromaDB is designed specifically for LLM applications and provides a simple Python API, supports persistent storage, metadata filtering, and integrates natively with LangChain and LlamaIndex.",
+    "precision_at_1": 1.0,
+    "precision_at_3": 0.3333333333333333,
+    "recall_at_3": 1.0,
+    "retrieval_ms": 22.6,
+    "generation_ms": 2952.0,
+    "end_to_end_ms": 2974.6
+  },
+  {
+    "query_id": "Q03",
+    "query": "How does data drift detection work in ML monitoring?",
+    "type": "direct_factual",
+    "relevant_docs": [
+      "doc_04"
+    ],
+    "retrieved_doc_ids": [
+      "doc_04",
+      "doc_03",
+      "doc_06"
+    ],
+    "retrieved_titles": [
+      "Model Monitoring and Data Drift Detection",
+      "MLOps Pipelines and CI/CD for Machine Learning",
+      "Feature Stores in Machine Learning"
+    ],
+    "answer": "Data drift detection in ML monitoring works by continuously observing a deployed machine learning model's behavior in production to detect changes in the statistical distribution of input features compared to the distribution seen during training. Common methods for drift detection include the Kolmogorov-Smirnov test, Population Stability Index (PSI), and Jensen-Shannon divergence. When drift is detected, a retraining trigger is fired initiating an automated pipeline.",
+    "precision_at_1": 1.0,
+    "precision_at_3": 0.3333333333333333,
+    "recall_at_3": 1.0,
+    "retrieval_ms": 21.7,
+    "generation_ms": 2970.3,
+    "end_to_end_ms": 2992.0
+  },
+  {
+    "query_id": "Q04",
+    "query": "What chunking strategies are available and what are the tradeoffs?",
+    "type": "direct_factual",
+    "relevant_docs": [
+      "doc_07"
+    ],
+    "retrieved_doc_ids": [
+      "doc_07",
+      "doc_05",
+      "doc_06"
+    ],
+    "retrieved_titles": [
+      "Chunking Strategies for RAG Systems",
+      "LLM Serving Infrastructure and Inference Optimization",
+      "Feature Stores in Machine Learning"
+    ],
+    "answer": "The provided context discusses two chunking strategies: Fixed-size chunking and Semantic chunking.\n\n1. Fixed-size chunking splits documents into chunks of a predetermined token or character count, such as 512 tokens with optional overlap like 50 tokens. Overlap preserves context across chunk boundaries but increases index size.\n\n2. Semantic chunking uses sentence boundary detection or topic modeling to create chunks that represent coherent semantic units regardless of length. This can improve precision but requires more complex preprocessing. The tradeoffs for these strategies are:\n   - Smaller chunks (128-256 tokens) improve retrieval precision by reducing noise, but may lose surrounding context needed for generation.\n   - Larger chunks (512-1024 tokens) preserve more context but reduce retrieval precision. A common best practice is to use 512 tokens with 10-15 percent overlap.",
+    "precision_at_1": 1.0,
+    "precision_at_3": 0.3333333333333333,
+    "recall_at_3": 1.0,
+    "retrieval_ms": 23.4,
+    "generation_ms": 5943.4,
+    "end_to_end_ms": 5966.9
+  },
+  {
+    "query_id": "Q05",
+    "query": "What is vLLM and how does it improve LLM serving throughput?",
+    "type": "direct_factual",
+    "relevant_docs": [
+      "doc_05"
+    ],
+    "retrieved_doc_ids": [
+      "doc_05",
+      "doc_10",
+      "doc_01"
+    ],
+    "retrieved_titles": [
+      "LLM Serving Infrastructure and Inference Optimization",
+      "Evaluation Metrics for RAG and LLM Systems",
+      "Retrieval-Augmented Generation (RAG)"
+    ],
+    "answer": "vLLM is a high-throughput LLM (Large Language Model) serving framework that uses PagedAttention to manage GPU memory efficiently. It improves LLM serving throughput by achieving up to 24x higher throughput compared to naive Hugging Face Transformers inference, due to its dynamic batching of requests.",
+    "precision_at_1": 1.0,
+    "precision_at_3": 0.3333333333333333,
+    "recall_at_3": 1.0,
+    "retrieval_ms": 23.1,
+    "generation_ms": 2527.2,
+    "end_to_end_ms": 2550.3
+  },
+  {
+    "query_id": "Q06",
+    "query": "What metrics should be used to evaluate a RAG pipeline?",
+    "type": "multi_doc",
+    "relevant_docs": [
+      "doc_10",
+      "doc_01"
+    ],
+    "retrieved_doc_ids": [
+      "doc_10",
+      "doc_03",
+      "doc_01"
+    ],
+    "retrieved_titles": [
+      "Evaluation Metrics for RAG and LLM Systems",
+      "MLOps Pipelines and CI/CD for Machine Learning",
+      "Retrieval-Augmented Generation (RAG)"
+    ],
+    "answer": "The metrics that should be used to evaluate a RAG pipeline include retrieval precision@k, recall@k, answer faithfulness, answer relevance, and hallucination rate.",
+    "precision_at_1": 1.0,
+    "precision_at_3": 0.6666666666666666,
+    "recall_at_3": 1.0,
+    "retrieval_ms": 24.1,
+    "generation_ms": 1666.9,
+    "end_to_end_ms": 1691.1
+  },
+  {
+    "query_id": "Q07",
+    "query": "How do feature stores prevent training-serving skew?",
+    "type": "direct_factual",
+    "relevant_docs": [
+      "doc_06"
+    ],
+    "retrieved_doc_ids": [
+      "doc_06",
+      "doc_04",
+      "doc_03"
+    ],
+    "retrieved_titles": [
+      "Feature Stores in Machine Learning",
+      "Model Monitoring and Data Drift Detection",
+      "MLOps Pipelines and CI/CD for Machine Learning"
+    ],
+    "answer": "Feature stores prevent training-serving skew by using the same feature transformation logic in both the training and serving contexts, thereby eliminating discrepancies between features computed during training and serving.",
+    "precision_at_1": 1.0,
+    "precision_at_3": 0.3333333333333333,
+    "recall_at_3": 1.0,
+    "retrieval_ms": 22.4,
+    "generation_ms": 1670.9,
+    "end_to_end_ms": 1693.3
+  },
+  {
+    "query_id": "Q08",
+    "query": "What is the best way to fine-tune a GPT model on proprietary data?",
+    "type": "out_of_scope",
+    "relevant_docs": [],
+    "retrieved_doc_ids": [
+      "doc_05",
+      "doc_04",
+      "doc_03"
+    ],
+    "retrieved_titles": [
+      "LLM Serving Infrastructure and Inference Optimization",
+      "Model Monitoring and Data Drift Detection",
+      "MLOps Pipelines and CI/CD for Machine Learning"
+    ],
+    "answer": "The context does not provide information on how to fine-tune a GPT model on proprietary data specifically. However, it mentions that vLLM and Ollama are tools for serving large language models, and MLOps pipelines include model training as a step. In a typical MLOps pipeline, you would first ingest your proprietary data, preprocess it, train the GPT model on this data, evaluate its performance, register the trained model, and then serve it using vLLM or Ollama if needed. The specifics of fine-tuning a GPT model might vary depending on the exact implementation of GPT you're using and the nature of your proprietary data.",
+    "precision_at_1": 0.0,
+    "precision_at_3": 0.0,
+    "recall_at_3": 1.0,
+    "retrieval_ms": 23.9,
+    "generation_ms": 4591.7,
+    "end_to_end_ms": 4615.6
+  },
+  {
+    "query_id": "Q09",
+    "query": "What embedding model should I use for semantic search?",
+    "type": "ambiguous",
+    "relevant_docs": [
+      "doc_09"
+    ],
+    "retrieved_doc_ids": [
+      "doc_09",
+      "doc_01",
+      "doc_02"
+    ],
+    "retrieved_titles": [
+      "Embedding Models for Semantic Search",
+      "Retrieval-Augmented Generation (RAG)",
+      "Vector Databases and Embedding Indexes"
+    ],
+    "answer": "The context provides several pre-trained embedding models available in the sentence-transformers library, such as all-MiniLM-L6-v2, all-mpnet-base-v2, and multi-qa-mpnet-base-dot-v1. However, it does not specify which one is best for semantic search. For local and open-source deployments, BAAI/bge-large-en-v1.5 and E5-large-v2 are also mentioned as strong alternatives. Therefore, you could consider using any of these models for semantic search, depending on your specific requirements such as computational resources, speed, or quality.",
+    "precision_at_1": 1.0,
+    "precision_at_3": 0.3333333333333333,
+    "recall_at_3": 1.0,
+    "retrieval_ms": 23.7,
+    "generation_ms": 4488.3,
+    "end_to_end_ms": 4512.0
+  },
+  {
+    "query_id": "Q10",
+    "query": "How do agentic AI systems decide which tool to use for a given task?",
+    "type": "multi_step_reasoning",
+    "relevant_docs": [
+      "doc_08"
+    ],
+    "retrieved_doc_ids": [
+      "doc_08",
+      "doc_03",
+      "doc_04"
+    ],
+    "retrieved_titles": [
+      "Agentic AI Systems and Tool Use",
+      "MLOps Pipelines and CI/CD for Machine Learning",
+      "Model Monitoring and Data Drift Detection"
+    ],
+    "answer": "Agentic AI systems can decide which tool to use for a given task through rule-based routing, LLM-based function calling, or trained classifiers.",
+    "precision_at_1": 1.0,
+    "precision_at_3": 0.3333333333333333,
+    "recall_at_3": 1.0,
+    "retrieval_ms": 22.0,
+    "generation_ms": 1550.0,
+    "end_to_end_ms": 1572.0
+  }
+]

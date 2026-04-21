@@ -1,0 +1,110 @@
+{
+  "task_id": "task_01",
+  "task": "What is retrieval-augmented generation and what are the key metrics used to evaluate it?",
+  "timestamp": "2026-04-21T02:13:29.008509",
+  "model": "mistral:7b-instruct",
+  "steps": [
+    {
+      "step": 1,
+      "tool": "retriever",
+      "tool_input": "What is retrieval-augmented generation and what are the key metrics used to evaluate it?",
+      "reasoning": "The task requires factual information, definitions, and metrics. The retriever tool can provide this information from the MLOps knowledge base.",
+      "result_summary": "Retrieved 3 chunks. Top: 'Evaluation Metrics for RAG and LLM Systems' (sim=0.6186)",
+      "raw_result": {
+        "tool": "retriever",
+        "query": "What is retrieval-augmented generation and what are the key metrics used to evaluate it?",
+        "chunks": [
+          {
+            "rank": 1,
+            "doc_id": "doc_10",
+            "doc_title": "Evaluation Metrics for RAG and LLM Systems",
+            "content": "Evaluating RAG systems requires measuring both retrieval quality and generation quality separately, since failures can originate at either stage. Retrieval metrics include Precision@k (fraction of retrieved documents that are relevant), Recall@k (fraction of all relevant documents that are retrieved in top-k), Mean Reciprocal Rank (MRR), and Normalized Discounted Cumulative Gain (NDCG). Generation metrics include faithfulness (whether the answer is supported by retrieved context), answer relevance (whether the answer addresses the question), and context utilization. The RAGAS framework provides automated metrics for faithfulness, answer relevance, context precision, and context recall using an LLM as a judge. Latency is a key operational metric: retrieval latency, generation latency, and end-to-end latency should all be measured separately to identify bottlenecks.",
+            "similarity": 0.6186
+          },
+          {
+            "rank": 2,
+            "doc_id": "doc_01",
+            "doc_title": "Retrieval-Augmented Generation (RAG)",
+            "content": "Retrieval-Augmented Generation (RAG) is a technique that enhances large language model outputs by grounding them in external knowledge retrieved at inference time. Unlike purely parametric models that rely solely on weights learned during training, RAG systems query a vector database to fetch relevant context before generating a response. The RAG pipeline consists of two main phases: indexing and querying. During indexing, documents are split into chunks, converted to dense vector embeddings using an encoder model such as sentence-transformers, and stored in a vector database like FAISS or ChromaDB. During querying, the user question is also embedded into the same vector space. A similarity search retrieves the top-k most relevant chunks. These chunks are injected into the LLM prompt as context, enabling the model to generate factually grounded responses and reducing hallucinations. Key metrics for evaluating RAG systems include retrieval precision@k, recall@k, answer faithfulness, and answer relevance. Hallucination rate measures how often the model generates claims not supported by the retrieved context.",
+            "similarity": 0.6034
+          },
+          {
+            "rank": 3,
+            "doc_id": "doc_07",
+            "doc_title": "Chunking Strategies for RAG Systems",
+            "content": "Chunking is the process of splitting documents into smaller segments before embedding and indexing. The chunking strategy has a significant impact on retrieval quality in RAG systems. Fixed-size chunking splits documents into chunks of a predetermined token or character count such as 512 tokens with optional overlap such as 50 tokens. Overlap preserves context across chunk boundaries but increases index size. Semantic chunking uses sentence boundary detection or topic modeling to create chunks that represent coherent semantic units regardless of length. This can improve precision but requires more complex preprocessing. Chunk size tradeoffs: smaller chunks (128-256 tokens) improve retrieval precision by reducing noise, but may lose surrounding context needed for generation. Larger chunks (512-1024 tokens) preserve more context but reduce retrieval precision. A common best practice is to use 512 tokens with 10-15 percent overlap.",
+            "similarity": 0.3711
+          }
+        ],
+        "top_doc": "Evaluation Metrics for RAG and LLM Systems",
+        "top_similarity": 0.6186,
+        "latency_ms": 231.2
+      },
+      "retrieved_content": "Evaluating RAG systems requires measuring both retrieval quality and generation quality separately, since failures can originate at either stage. Retrieval metrics include Precision@k (fraction of retrieved documents that are relevant), Recall@k (fraction of all relevant documents that are retrieved in top-k), Mean Reciprocal Rank (MRR), and Normalized Discounted Cumulative Gain (NDCG). Generation metrics include faithfulness (whether the answer is supported by retrieved context), answer relevance (whether the answer addresses the question), and context utilization. The RAGAS framework provides automated metrics for faithfulness, answer relevance, context precision, and context recall using an LLM as a judge. Latency is a key operational metric: retrieval latency, generation latency, and end-to-end latency should all be measured separately to identify bottlenecks. Retrieval-Augmented Generation (RAG) is a technique that enhances large language model outputs by grounding them in external knowledge retrieved at inference time. Unlike purely parametric models that rely solely on weights learned during training, RAG systems query a vector database to fetch relevant context before generating a response. The RAG pipeline consists of two main phases: indexing and querying. During indexing, documents are split into chunks, converted to dense vector embeddings using an encoder model such as sentence-transformers, and stored in a vector database like FAISS or ChromaDB. During querying, the user question is also embedded into the same vector space. A similarity search retrieves the top-k most relevant chunks. These chunks are injected into the LLM prompt as context, enabling the model to generate factually grounded responses and reducing hallucinations. Key metrics for evaluating RAG systems include retrieval precision@k, recall@k, answer faithfulness, and answer relevance. Hallucination rate measures how often the model generates claims not supported by the retrieved context.",
+      "latency_ms": 231.2
+    },
+    {
+      "step": 2,
+      "tool": "summarizer",
+      "tool_input": "Retrieved 3 chunks. Top: 'Evaluation Metrics for RAG and LLM Systems'",
+      "reasoning": "The retrieved content is lengthy, so it needs to be distilled into a concise summary.",
+      "result_summary": "Summary (91 words): RAG (Retrieval-Augmented Generation) systems, which combine large language model...",
+      "raw_result": {
+        "tool": "summarizer",
+        "input_length": 277,
+        "summary": "RAG (Retrieval-Augmented Generation) systems, which combine large language models with external knowledge retrieved at inference time, are evaluated based on both retrieval and generation quality. Retrieval metrics include Precision@k, Recall@k, MRR, NDCG, while generation metrics involve faithfulness, answer relevance, and context utilization. The RAGAS framework offers automated metrics for these aspects. Key operational metric is latency, with separate measurements for retrieval, generation, and end-to-end latency. RAG systems work by indexing documents into a vector database during indexing phase, then embedding user questions and retrieving top-k most relevant chunks during querying phase.",
+        "output_length": 91,
+        "latency_ms": 4085.1
+      },
+      "retrieved_content": "RAG (Retrieval-Augmented Generation) systems, which combine large language models with external knowledge retrieved at inference time, are evaluated based on both retrieval and generation quality. Retrieval metrics include Precision@k, Recall@k, MRR, NDCG, while generation metrics involve faithfulness, answer relevance, and context utilization. The RAGAS framework offers automated metrics for these aspects. Key operational metric is latency, with separate measurements for retrieval, generation, and end-to-end latency. RAG systems work by indexing documents into a vector database during indexing phase, then embedding user questions and retrieving top-k most relevant chunks during querying phase.",
+      "latency_ms": 4085.1
+    },
+    {
+      "step": 3,
+      "tool": "retriever",
+      "tool_input": "Evaluation Metrics for RAG and LLM Systems",
+      "reasoning": "To find specific metrics used to evaluate Retrieval-Augmented Generation (RAG) systems, it's necessary to retrieve more detailed information.",
+      "result_summary": "Retrieved 3 chunks. Top: 'Evaluation Metrics for RAG and LLM Systems' (sim=0.5497)",
+      "raw_result": {
+        "tool": "retriever",
+        "query": "Evaluation Metrics for RAG and LLM Systems",
+        "chunks": [
+          {
+            "rank": 1,
+            "doc_id": "doc_10",
+            "doc_title": "Evaluation Metrics for RAG and LLM Systems",
+            "content": "Evaluating RAG systems requires measuring both retrieval quality and generation quality separately, since failures can originate at either stage. Retrieval metrics include Precision@k (fraction of retrieved documents that are relevant), Recall@k (fraction of all relevant documents that are retrieved in top-k), Mean Reciprocal Rank (MRR), and Normalized Discounted Cumulative Gain (NDCG). Generation metrics include faithfulness (whether the answer is supported by retrieved context), answer relevance (whether the answer addresses the question), and context utilization. The RAGAS framework provides automated metrics for faithfulness, answer relevance, context precision, and context recall using an LLM as a judge. Latency is a key operational metric: retrieval latency, generation latency, and end-to-end latency should all be measured separately to identify bottlenecks.",
+            "similarity": 0.5497
+          },
+          {
+            "rank": 2,
+            "doc_id": "doc_01",
+            "doc_title": "Retrieval-Augmented Generation (RAG)",
+            "content": "Retrieval-Augmented Generation (RAG) is a technique that enhances large language model outputs by grounding them in external knowledge retrieved at inference time. Unlike purely parametric models that rely solely on weights learned during training, RAG systems query a vector database to fetch relevant context before generating a response. The RAG pipeline consists of two main phases: indexing and querying. During indexing, documents are split into chunks, converted to dense vector embeddings using an encoder model such as sentence-transformers, and stored in a vector database like FAISS or ChromaDB. During querying, the user question is also embedded into the same vector space. A similarity search retrieves the top-k most relevant chunks. These chunks are injected into the LLM prompt as context, enabling the model to generate factually grounded responses and reducing hallucinations. Key metrics for evaluating RAG systems include retrieval precision@k, recall@k, answer faithfulness, and answer relevance. Hallucination rate measures how often the model generates claims not supported by the retrieved context.",
+            "similarity": 0.3551
+          },
+          {
+            "rank": 3,
+            "doc_id": "doc_05",
+            "doc_title": "LLM Serving Infrastructure and Inference Optimization",
+            "content": "Serving large language models efficiently in production requires specialized inference infrastructure that can handle high concurrency, low latency, and large model sizes. vLLM is a high-throughput LLM serving framework that uses PagedAttention to manage GPU memory efficiently. It achieves up to 24x higher throughput compared to naive Hugging Face Transformers inference by batching requests dynamically. Ollama is a lightweight tool for running open-weight LLMs locally. It packages models with their runtime dependencies and exposes a simple REST API, making it ideal for development and single-machine deployments. Quantization reduces model size and inference latency by representing weights in lower precision formats such as INT8 or INT4. GGUF format used by llama.cpp enables CPU-based inference for quantized models with minimal quality degradation. Key metrics for LLM serving include time-to-first-token (TTFT), tokens per second (throughput), and GPU memory utilization.",
+            "similarity": 0.2652
+          }
+        ],
+        "top_doc": "Evaluation Metrics for RAG and LLM Systems",
+        "top_similarity": 0.5497,
+        "latency_ms": 27.5
+      },
+      "retrieved_content": "Evaluating RAG systems requires measuring both retrieval quality and generation quality separately, since failures can originate at either stage. Retrieval metrics include Precision@k (fraction of retrieved documents that are relevant), Recall@k (fraction of all relevant documents that are retrieved in top-k), Mean Reciprocal Rank (MRR), and Normalized Discounted Cumulative Gain (NDCG). Generation metrics include faithfulness (whether the answer is supported by retrieved context), answer relevance (whether the answer addresses the question), and context utilization. The RAGAS framework provides automated metrics for faithfulness, answer relevance, context precision, and context recall using an LLM as a judge. Latency is a key operational metric: retrieval latency, generation latency, and end-to-end latency should all be measured separately to identify bottlenecks. Retrieval-Augmented Generation (RAG) is a technique that enhances large language model outputs by grounding them in external knowledge retrieved at inference time. Unlike purely parametric models that rely solely on weights learned during training, RAG systems query a vector database to fetch relevant context before generating a response. The RAG pipeline consists of two main phases: indexing and querying. During indexing, documents are split into chunks, converted to dense vector embeddings using an encoder model such as sentence-transformers, and stored in a vector database like FAISS or ChromaDB. During querying, the user question is also embedded into the same vector space. A similarity search retrieves the top-k most relevant chunks. These chunks are injected into the LLM prompt as context, enabling the model to generate factually grounded responses and reducing hallucinations. Key metrics for evaluating RAG systems include retrieval precision@k, recall@k, answer faithfulness, and answer relevance. Hallucination rate measures how often the model generates claims not supported by the retrieved context.",
+      "latency_ms": 27.5
+    }
+  ],
+  "final_answer": "Retrieval-Augmented Generation (RAG) is a technique that enhances large language model outputs by grounding them in external knowledge retrieved at inference time. The RAG pipeline consists of two main phases: indexing and querying. During indexing, documents are split into chunks, converted to dense vector embeddings using an encoder model such as sentence-transformers, and stored in a vector database like FAISS or ChromaDB. During querying, the user question is also embedded into the same vector space. A similarity search retrieves the top-k most relevant chunks. These chunks are injected into the LLM prompt as context, enabling the model to generate factually grounded responses and reducing hallucinations.\n\nThe key metrics used to evaluate RAG systems include:\n1. Retrieval precision@k (fraction of retrieved documents that are relevant)\n2. Recall@k (fraction of all relevant documents that are retrieved in top-k)\n3. Mean Reciprocal Rank (MRR)\n4. Normalized Discounted Cumulative Gain (NDCG)\n5. Answer faithfulness (whether the answer is supported by retrieved context)\n6. Answer relevance (whether the answer addresses the question)\n7. Context utilization\n8. Hallucination rate (how often the model generates claims not supported by the retrieved context).",
+  "total_latency_ms": 49822.3,
+  "tools_used": [
+    "retriever",
+    "summarizer"
+  ],
+  "final_answer_latency_ms": 8712.4,
+  "num_steps": 3
+}
