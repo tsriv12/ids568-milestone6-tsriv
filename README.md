@@ -50,7 +50,7 @@ Agent Task → Mistral 7B (tool selection) → [Retriever | Summarizer | Keyword
 
 ### Step 1: Clone the repository
 ```bash
-git clone https://github.com/<your-username>/ids568-milestone6-tsriv.git
+git clone https://github.com/tsriv12/ids568-milestone6-tsriv.git
 cd ids568-milestone6-tsriv
 ```
 
@@ -178,7 +178,7 @@ This repository also includes optional challenge extensions beyond the base Mile
 - `rag_extensions.ipynb`: evaluates reranking, hybrid search, and query expansion for the RAG pipeline.
 - `agent_extensions.py`: implements agent recovery mechanisms, confidence scoring, and parallel tool execution.
 - `extension_results.json`: stores extension evaluation outputs and before/after comparison results.
-- `agent_traces/extension_recovery_task.json`, `agent_traces/extension_confidence_task.json`, and `agent_traces/extension_parallel_task.json`: provide trace examples for the agent extensions.
+- `agent_traces/extension_recovery.json`, `agent_traces/extension_confidence.json`, and `agent_traces/extension_parallel.json`: provide trace examples for the agent extensions.
 
 ## Known Limitations
 
