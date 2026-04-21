@@ -50,8 +50,8 @@ Agent Task → Mistral 7B (tool selection) → [Retriever | Summarizer | Keyword
 
 ### Step 1: Clone the repository
 ```bash
-git clone https://github.com/<your-username>/ids568-milestone6-tsrivastava.git
-cd ids568-milestone6-tsrivastava
+git clone https://github.com/<your-username>/ids568-milestone6-tsriv.git
+cd ids568-milestone6-tsriv
 ```
 
 ### Step 2: Create and activate virtual environment
@@ -95,6 +95,10 @@ python -m ipykernel install --user --name=milestone6 --display-name "Milestone 6
 
 ---
 
+
+> **Important:** Run `rag_pipeline.ipynb` first before running `agent_controller.py`.  
+> The agent expects the local Chroma index in `./chroma_db` and the `mlops_rag` collection created by the RAG pipeline.
+
 ## Usage
 
 ### Part 1: Run the RAG Pipeline (Notebook)
@@ -115,7 +119,7 @@ jupyter nbconvert --to notebook --execute rag_pipeline.ipynb --output rag_pipeli
 ### Part 2: Run the Agent Controller
 
 ```bash
-cd ids568-milestone6-tsrivastava
+cd ids568-milestone6-tsriv
 source venv/bin/activate
 python agent_controller.py
 ```
@@ -149,7 +153,7 @@ TASK task_01: What is retrieval-augmented generation...
 ## Repository Structure
 
 ```
-ids568-milestone6-tsrivastava/
+ids568-milestone6-tsriv/
 ├── rag_pipeline.ipynb          # Part 1: RAG pipeline implementation
 ├── agent_controller.py         # Part 2: Agent controller implementation
 ├── rag_evaluation_report.md    # Part 1: Evaluation metrics and analysis
@@ -165,6 +169,16 @@ ids568-milestone6-tsrivastava/
 ```
 
 ---
+
+
+## Challenge Extensions
+
+This repository also includes optional challenge extensions beyond the base Milestone 6 requirements:
+
+- `rag_extensions.ipynb`: evaluates reranking, hybrid search, and query expansion for the RAG pipeline.
+- `agent_extensions.py`: implements agent recovery mechanisms, confidence scoring, and parallel tool execution.
+- `extension_results.json`: stores extension evaluation outputs and before/after comparison results.
+- `agent_traces/extension_recovery_task.json`, `agent_traces/extension_confidence_task.json`, and `agent_traces/extension_parallel_task.json`: provide trace examples for the agent extensions.
 
 ## Known Limitations
 
