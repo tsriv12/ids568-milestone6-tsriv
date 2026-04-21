@@ -1,0 +1,113 @@
+{
+  "extension": "recovery_mechanisms",
+  "threshold": 0.6,
+  "results": [
+    {
+      "query_id": "R01",
+      "original_query": "What is RAG?",
+      "expected_doc": "doc_01",
+      "num_attempts": 3,
+      "recovery_triggered": true,
+      "final_similarity": 0.4312,
+      "top_doc": "Evaluation Metrics for RAG and LLM Systems",
+      "attempts": [
+        {
+          "query": "What is RAG?",
+          "similarity": 0.4195
+        },
+        {
+          "query": "Define the acronym \"RAG\" in the context of risk assessment or governance systems.",
+          "similarity": 0.4189
+        },
+        {
+          "query": "Define the acronym \"RAG\" in the context of risk assessment or project management systems.",
+          "similarity": 0.4312
+        }
+      ]
+    },
+    {
+      "query_id": "R02",
+      "original_query": "vLLM PagedAttention GPU memory",
+      "expected_doc": "doc_05",
+      "num_attempts": 3,
+      "recovery_triggered": true,
+      "final_similarity": 0.4443,
+      "top_doc": "LLM Serving Infrastructure and Inference Optimization",
+      "attempts": [
+        {
+          "query": "vLLM PagedAttention GPU memory",
+          "similarity": 0.3891
+        },
+        {
+          "query": "GPU Memory Efficiency with Paged Attention in Deep Learning Model Optimization",
+          "similarity": 0.4443
+        },
+        {
+          "query": "GPU Memory Efficiency with Paged Attention in Deep Learning Model Optimization",
+          "similarity": 0.4443
+        }
+      ]
+    },
+    {
+      "query_id": "R03",
+      "original_query": "model decay in production",
+      "expected_doc": "doc_04",
+      "num_attempts": 3,
+      "recovery_triggered": true,
+      "final_similarity": 0.6181,
+      "top_doc": "Model Monitoring and Data Drift Detection",
+      "attempts": [
+        {
+          "query": "model decay in production",
+          "similarity": 0.3269
+        },
+        {
+          "query": "Production Model Degradation or Performance Drift Analysis",
+          "similarity": 0.5666
+        },
+        {
+          "query": "Anomaly detection in machine learning models during production",
+          "similarity": 0.6181
+        }
+      ]
+    },
+    {
+      "query_id": "R04",
+      "original_query": "fine-tuning transformers on custom data",
+      "expected_doc": null,
+      "num_attempts": 3,
+      "recovery_triggered": true,
+      "final_similarity": 0.3646,
+      "top_doc": "Retrieval-Augmented Generation (RAG)",
+      "attempts": [
+        {
+          "query": "fine-tuning transformers on custom data",
+          "similarity": 0.2823
+        },
+        {
+          "query": "Optimizing BERT or other Transformer models for personalized training using custom datasets",
+          "similarity": 0.3517
+        },
+        {
+          "query": "Fine-tuning BERT models using custom training datasets for specific tasks",
+          "similarity": 0.3646
+        }
+      ]
+    },
+    {
+      "query_id": "R05",
+      "original_query": "embedding dimensions semantic similarity",
+      "expected_doc": "doc_09",
+      "num_attempts": 1,
+      "recovery_triggered": false,
+      "final_similarity": 0.6082,
+      "top_doc": "Embedding Models for Semantic Search",
+      "attempts": [
+        {
+          "query": "embedding dimensions semantic similarity",
+          "similarity": 0.6082
+        }
+      ]
+    }
+  ]
+}

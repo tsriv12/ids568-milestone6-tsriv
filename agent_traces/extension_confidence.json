@@ -1,0 +1,66 @@
+{
+  "extension": "confidence_scoring",
+  "threshold": 0.5,
+  "results": [
+    {
+      "task": "What is RAG?",
+      "tool": "retriever",
+      "confidence_score": 0.523,
+      "is_low_confidence": false,
+      "components": {
+        "retrieval_similarity": 0.4195,
+        "keyword_overlap": 0.143,
+        "llm_self_assessment": 0.95
+      },
+      "flag": "\u2713 HIGH CONFIDENCE"
+    },
+    {
+      "task": "Summarize the retrieved content about vLLM",
+      "tool": "summarizer",
+      "confidence_score": 0.667,
+      "is_low_confidence": false,
+      "components": {
+        "retrieval_similarity": null,
+        "keyword_overlap": 0.167,
+        "llm_self_assessment": 1.0
+      },
+      "flag": "\u2713 HIGH CONFIDENCE"
+    },
+    {
+      "task": "What is the best pizza recipe?",
+      "tool": "retriever",
+      "confidence_score": 0.149,
+      "is_low_confidence": true,
+      "components": {
+        "retrieval_similarity": 0.0914,
+        "keyword_overlap": 0.143,
+        "llm_self_assessment": 0.25
+      },
+      "flag": "\u26a0 LOW CONFIDENCE"
+    },
+    {
+      "task": "Extract key concepts from this MLOps text",
+      "tool": "keyword_extractor",
+      "confidence_score": 0.733,
+      "is_low_confidence": false,
+      "components": {
+        "retrieval_similarity": null,
+        "keyword_overlap": 0.333,
+        "llm_self_assessment": 1.0
+      },
+      "flag": "\u2713 HIGH CONFIDENCE"
+    },
+    {
+      "task": "How does data drift work?",
+      "tool": "summarizer",
+      "confidence_score": 0.21,
+      "is_low_confidence": true,
+      "components": {
+        "retrieval_similarity": null,
+        "keyword_overlap": 0.0,
+        "llm_self_assessment": 0.35
+      },
+      "flag": "\u26a0 LOW CONFIDENCE"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "extension": "parallel_tool_execution",
+  "results": [
+    {
+      "task_id": "P01",
+      "description": "Retrieve AND extract keywords simultaneously for a complex query",
+      "tools": [
+        "retriever",
+        "keyword_extractor"
+      ],
+      "parallel_time_ms": 384.0,
+      "sequential_time_ms": 814.2,
+      "speedup": 2.12
+    },
+    {
+      "task_id": "P02",
+      "description": "Retrieve from two different angles simultaneously",
+      "tools": [
+        "retriever",
+        "retriever"
+      ],
+      "parallel_time_ms": 36.8,
+      "sequential_time_ms": 31.3,
+      "speedup": 0.85
+    },
+    {
+      "task_id": "P03",
+      "description": "Extract keywords AND summarize retrieved content simultaneously",
+      "tools": [
+        "keyword_extractor",
+        "summarizer"
+      ],
+      "parallel_time_ms": 1947.0,
+      "sequential_time_ms": 1766.9,
+      "speedup": 0.91
+    }
+  ]
+}
